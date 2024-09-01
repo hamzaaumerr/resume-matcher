@@ -130,15 +130,15 @@ if st.session_state.get("saved", False):
         )
 
         relevant_experience = vector_store.similarity_search_by_vector(
-            embedding=embedding_model.embed_query(job_description), k=10, filter={"type": "experience"}
+            embedding=embedding_model.embed_query(job_description), k=4, filter={"type": "experience"}
         )
         
         relevant_education = vector_store.similarity_search_by_vector(
-            embedding=embedding_model.embed_query(job_description), k=2, filter={"type": "education"}
+            embedding=embedding_model.embed_query(job_description), k=4, filter={"type": "education"}
         )
 
         relevant_project = vector_store.similarity_search_by_vector(
-            embedding=embedding_model.embed_query(job_description), k=2, filter={"type": "project"}
+            embedding=embedding_model.embed_query(job_description), k=4, filter={"type": "project"}
         )
 
         # Format the relevant information
